@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PaddleMovement : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -10,10 +10,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     public float speed = 0.01f;
 
+    protected virtual float getInput(){
+        return Input.GetAxis("Vertical");
+    }
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float vertical = Input.GetAxis("Vertical");
-        transform.position += new Vector3(0, vertical * speed, 0);
+        
+        transform.position += new Vector3(0, getInput() * speed, 0);
     }
 }
