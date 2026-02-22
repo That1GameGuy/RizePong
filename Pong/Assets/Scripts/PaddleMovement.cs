@@ -19,10 +19,10 @@ public abstract class PaddleMovement : NetworkBehaviour, ICollidable
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (IsOwner)
-        {
-            //transform.position += new Vector3(0, getInput() * speed, 0);
-
+        //if (IsOwner)
+        //{
+            transform.position += new Vector3(0, getInput() * speed, 0);
+            /*
             float newY = transform.position.y + (getInput() * speed * Time.deltaTime);
         
             yPos.Value = newY;
@@ -35,7 +35,7 @@ public abstract class PaddleMovement : NetworkBehaviour, ICollidable
         {
             // Non-owners: Read NetworkVariable and update visual position
             transform.position = new Vector3(transform.position.x, syncedYPosition.Value, 0);
-        }
+        }*/
         
     }
 
